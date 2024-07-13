@@ -3,9 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Css links -->
+     <link rel="stylesheet" type="text/css" href="styler.css" />
+     
+     <link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>AyoDrive</title>
+    <script src="https://cdn.jsdelivr.net/npm/scrollreveal"></script>
 </head>
 <body>
-    <h1>Welcome to Ayodrive</h1>
+
+    <div id="container">
+        <div class="left-nav">
+            <div class="profile">
+                <div class="pro-hold">
+                    <img src="profile.jpg" class="pro-img">
+                </div>
+            </div>
+
+            <div class="nav-links">
+                <ul>
+                    <li><a href="#home" class="active act-link nav-link" data-bs-toggle="tab"><span class="nav-icon"> </span>Home</a></li>
+                    
+                    <li><a href="#cert" data-bs-toggle="tab" class="nav-link">Certificates</a></li>
+
+                    <li><a href="#project" data-bs-toggle="tab" class="nav-link">Projects</a></li>
+                    <li><a href="#skills"  data-bs-toggle="tab" class="nav-link">Skills</a></li>
+                    <li><a href="#contact" data-bs-toggle="tab" class="nav-link">Contact</a></li>
+                    <li><a href="#about" data-bs-toggle="tab"
+                        class="nav-link">About</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="right">
+            <div id="tab-content">
+                <div id="home" class="p-5 tab-pane active">
+                    <div class="home-head">
+                        Ayodrive
+                    </div>
+                    <div class="h-content">
+                        Hi there! am <span class="focus">Excellent Ayomide Badejo</span> and am a web developer and programmer. This is my portfolio site that holds various informations about me like my skills, projects i've tried out, my Certificates and so on... if you need to contact me for business purposes kindly visit my <a href="ayobyte.vercel.app"> business website</a> but here you can explore Me &#x1F60A;.
+                    </div>
+                </div>
+
+                <div id="cert" class="container bg-primary p-5 tab-pane">
+                    Certificates
+                </div>
+
+                <div id="project" class="container bg-primary p-5 tab-pane">
+                    Projects
+                </div>
+
+                <div id="skills" class="container bg-primary p-5 tab-pane">
+                    Skills
+                </div>
+
+                <div id="contact" class="container bg-primary p-5 tab-pane">
+                    Contact
+                </div>
+
+                <div id="about" class="container bg-primary p-5 tab-pane">
+                    About
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        $(document).ready(function(){
+            // Hide all tab panes except the active 
+            $('.tab-pane').not('.active').hide();
+
+            // On click event for nav-link
+            $('.nav-link').click(function(e){
+                e.preventDefault();
+                
+                // Remove active class from all nav-links and tab-panes
+                $('.nav-link').removeClass('active');
+                $('.tab-pane').removeClass('active').hide();
+
+                // Add active class to the clicked nav-link
+                $(this).addClass('active');
+
+                // Show the corresponding tab-pane
+                $($(this).attr('href')).addClass('active').show();
+            });
+        });
+    </script>
+
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./scroller.js"></script>
+    <script src="./style.js" async></script>
 </body>
 </html>
