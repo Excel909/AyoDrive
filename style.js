@@ -38,3 +38,4 @@ const movement = document.querySelector('.movement');
       const walk = (x - startX) * 3; // Scroll sensitivity
       movement.scrollLeft = scrollLeft - walk;
     });
+
